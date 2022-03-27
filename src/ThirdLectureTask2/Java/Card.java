@@ -71,11 +71,11 @@ public class Card {
         }
 
         if (!suitVal.equals("")) {
-                this.suit = suitVal;
-                this.rank = rank;
-            } else {
-                System.out.println("You entered wrong card`s suit or rank \n");
-            }
+            this.suit = suitVal;
+            this.rank = rank;
+        } else {
+            System.out.println("You entered wrong card`s suit or rank");
+        }
     }
 
     //проверка принадлежности карты стандартной колоде
@@ -93,15 +93,15 @@ public class Card {
                 if (this.rank != null && cardRank.getRankUserEnter().toLowerCase().equals(this.rank.toLowerCase()) &&
                         cardRank.ordinal() >=0 &&
                         cardRank.ordinal() < 13) {
-                for (Suit cardSuit : Suit.values()) {
-                    if (cardSuit.getSuitUserEnter().equals(suit)) {
-                        result = true;
-                        break;
+                    for (Suit cardSuit : Suit.values()) {
+                        if (cardSuit.getSuitUserEnter().equals(suit)) {
+                            result = true;
+                            break;
+                        }
                     }
                 }
             }
         }
-    }
         return result;
     }
 
